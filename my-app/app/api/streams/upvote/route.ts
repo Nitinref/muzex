@@ -16,7 +16,7 @@ export async function POST(req:NextRequest){
 
     const session =await getServerSession(); 
 
-    const user = await prismaClient.upvote.findFirst({
+    const user = await prismaClient.user.findFirst({
         where:{
             // @ts-ignore
             email:session?.user?.email ?? ""

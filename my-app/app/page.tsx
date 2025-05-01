@@ -3,16 +3,19 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Play, Music, Users, Headphones, ChevronRight, Menu } from "lucide-react"
 import { Appbar } from "./components/Appbar"
+
 import { Redirect } from "./components/Redirect"
 
 export default function LandingPage() {
+
   return (
+  
     <div className="min-h-screen bg-gradient-to-b from-black to-purple-950 text-white">
       {/* Header */}
       <header className="sticky top-0 z-50 backdrop-blur-lg bg-black/30 border-b border-white/10">
-   <Appbar />
     
-   <Redirect />
+   <Appbar />
+ <Redirect />
       </header>
 
       {/* Hero Section */}

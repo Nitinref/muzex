@@ -2236,6 +2236,10 @@ export namespace Prisma {
     type: $Enums.StreamType | null
     url: string | null
     extractedId: string | null
+    title: string | null
+    smallImg: string | null
+    bigImg: string | null
+    createdAt: Date | null
     active: boolean | null
     userId: string | null
   }
@@ -2245,6 +2249,10 @@ export namespace Prisma {
     type: $Enums.StreamType | null
     url: string | null
     extractedId: string | null
+    title: string | null
+    smallImg: string | null
+    bigImg: string | null
+    createdAt: Date | null
     active: boolean | null
     userId: string | null
   }
@@ -2254,6 +2262,10 @@ export namespace Prisma {
     type: number
     url: number
     extractedId: number
+    title: number
+    smallImg: number
+    bigImg: number
+    createdAt: number
     active: number
     userId: number
     _all: number
@@ -2265,6 +2277,10 @@ export namespace Prisma {
     type?: true
     url?: true
     extractedId?: true
+    title?: true
+    smallImg?: true
+    bigImg?: true
+    createdAt?: true
     active?: true
     userId?: true
   }
@@ -2274,6 +2290,10 @@ export namespace Prisma {
     type?: true
     url?: true
     extractedId?: true
+    title?: true
+    smallImg?: true
+    bigImg?: true
+    createdAt?: true
     active?: true
     userId?: true
   }
@@ -2283,6 +2303,10 @@ export namespace Prisma {
     type?: true
     url?: true
     extractedId?: true
+    title?: true
+    smallImg?: true
+    bigImg?: true
+    createdAt?: true
     active?: true
     userId?: true
     _all?: true
@@ -2365,6 +2389,10 @@ export namespace Prisma {
     type: $Enums.StreamType
     url: string
     extractedId: string
+    title: string
+    smallImg: string
+    bigImg: string
+    createdAt: Date
     active: boolean
     userId: string
     _count: StreamCountAggregateOutputType | null
@@ -2391,6 +2419,10 @@ export namespace Prisma {
     type?: boolean
     url?: boolean
     extractedId?: boolean
+    title?: boolean
+    smallImg?: boolean
+    bigImg?: boolean
+    createdAt?: boolean
     active?: boolean
     userId?: boolean
     upvotes?: boolean | Stream$upvotesArgs<ExtArgs>
@@ -2403,6 +2435,10 @@ export namespace Prisma {
     type?: boolean
     url?: boolean
     extractedId?: boolean
+    title?: boolean
+    smallImg?: boolean
+    bigImg?: boolean
+    createdAt?: boolean
     active?: boolean
     userId?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
@@ -2413,6 +2449,10 @@ export namespace Prisma {
     type?: boolean
     url?: boolean
     extractedId?: boolean
+    title?: boolean
+    smallImg?: boolean
+    bigImg?: boolean
+    createdAt?: boolean
     active?: boolean
     userId?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
@@ -2423,11 +2463,15 @@ export namespace Prisma {
     type?: boolean
     url?: boolean
     extractedId?: boolean
+    title?: boolean
+    smallImg?: boolean
+    bigImg?: boolean
+    createdAt?: boolean
     active?: boolean
     userId?: boolean
   }
 
-  export type StreamOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "type" | "url" | "extractedId" | "active" | "userId", ExtArgs["result"]["stream"]>
+  export type StreamOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "type" | "url" | "extractedId" | "title" | "smallImg" | "bigImg" | "createdAt" | "active" | "userId", ExtArgs["result"]["stream"]>
   export type StreamInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     upvotes?: boolean | Stream$upvotesArgs<ExtArgs>
     user?: boolean | UserDefaultArgs<ExtArgs>
@@ -2451,6 +2495,10 @@ export namespace Prisma {
       type: $Enums.StreamType
       url: string
       extractedId: string
+      title: string
+      smallImg: string
+      bigImg: string
+      createdAt: Date
       active: boolean
       userId: string
     }, ExtArgs["result"]["stream"]>
@@ -2882,6 +2930,10 @@ export namespace Prisma {
     readonly type: FieldRef<"Stream", 'StreamType'>
     readonly url: FieldRef<"Stream", 'String'>
     readonly extractedId: FieldRef<"Stream", 'String'>
+    readonly title: FieldRef<"Stream", 'String'>
+    readonly smallImg: FieldRef<"Stream", 'String'>
+    readonly bigImg: FieldRef<"Stream", 'String'>
+    readonly createdAt: FieldRef<"Stream", 'DateTime'>
     readonly active: FieldRef<"Stream", 'Boolean'>
     readonly userId: FieldRef<"Stream", 'String'>
   }
@@ -4390,6 +4442,10 @@ export namespace Prisma {
     type: 'type',
     url: 'url',
     extractedId: 'extractedId',
+    title: 'title',
+    smallImg: 'smallImg',
+    bigImg: 'bigImg',
+    createdAt: 'createdAt',
     active: 'active',
     userId: 'userId'
   };
@@ -4466,6 +4522,20 @@ export namespace Prisma {
    * Reference to a field of type 'StreamType[]'
    */
   export type ListEnumStreamTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'StreamType[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'DateTime'
+   */
+  export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
+    
+
+
+  /**
+   * Reference to a field of type 'DateTime[]'
+   */
+  export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime[]'>
     
 
 
@@ -4549,6 +4619,10 @@ export namespace Prisma {
     type?: EnumStreamTypeFilter<"Stream"> | $Enums.StreamType
     url?: StringFilter<"Stream"> | string
     extractedId?: StringFilter<"Stream"> | string
+    title?: StringFilter<"Stream"> | string
+    smallImg?: StringFilter<"Stream"> | string
+    bigImg?: StringFilter<"Stream"> | string
+    createdAt?: DateTimeFilter<"Stream"> | Date | string
     active?: BoolFilter<"Stream"> | boolean
     userId?: StringFilter<"Stream"> | string
     upvotes?: UpvoteListRelationFilter
@@ -4560,6 +4634,10 @@ export namespace Prisma {
     type?: SortOrder
     url?: SortOrder
     extractedId?: SortOrder
+    title?: SortOrder
+    smallImg?: SortOrder
+    bigImg?: SortOrder
+    createdAt?: SortOrder
     active?: SortOrder
     userId?: SortOrder
     upvotes?: UpvoteOrderByRelationAggregateInput
@@ -4574,6 +4652,10 @@ export namespace Prisma {
     type?: EnumStreamTypeFilter<"Stream"> | $Enums.StreamType
     url?: StringFilter<"Stream"> | string
     extractedId?: StringFilter<"Stream"> | string
+    title?: StringFilter<"Stream"> | string
+    smallImg?: StringFilter<"Stream"> | string
+    bigImg?: StringFilter<"Stream"> | string
+    createdAt?: DateTimeFilter<"Stream"> | Date | string
     active?: BoolFilter<"Stream"> | boolean
     userId?: StringFilter<"Stream"> | string
     upvotes?: UpvoteListRelationFilter
@@ -4585,6 +4667,10 @@ export namespace Prisma {
     type?: SortOrder
     url?: SortOrder
     extractedId?: SortOrder
+    title?: SortOrder
+    smallImg?: SortOrder
+    bigImg?: SortOrder
+    createdAt?: SortOrder
     active?: SortOrder
     userId?: SortOrder
     _count?: StreamCountOrderByAggregateInput
@@ -4600,6 +4686,10 @@ export namespace Prisma {
     type?: EnumStreamTypeWithAggregatesFilter<"Stream"> | $Enums.StreamType
     url?: StringWithAggregatesFilter<"Stream"> | string
     extractedId?: StringWithAggregatesFilter<"Stream"> | string
+    title?: StringWithAggregatesFilter<"Stream"> | string
+    smallImg?: StringWithAggregatesFilter<"Stream"> | string
+    bigImg?: StringWithAggregatesFilter<"Stream"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"Stream"> | Date | string
     active?: BoolWithAggregatesFilter<"Stream"> | boolean
     userId?: StringWithAggregatesFilter<"Stream"> | string
   }
@@ -4708,6 +4798,10 @@ export namespace Prisma {
     type: $Enums.StreamType
     url: string
     extractedId: string
+    title: string
+    smallImg: string
+    bigImg: string
+    createdAt?: Date | string
     active?: boolean
     upvotes?: UpvoteCreateNestedManyWithoutStreamInput
     user: UserCreateNestedOneWithoutStreamInput
@@ -4718,6 +4812,10 @@ export namespace Prisma {
     type: $Enums.StreamType
     url: string
     extractedId: string
+    title: string
+    smallImg: string
+    bigImg: string
+    createdAt?: Date | string
     active?: boolean
     userId: string
     upvotes?: UpvoteUncheckedCreateNestedManyWithoutStreamInput
@@ -4728,6 +4826,10 @@ export namespace Prisma {
     type?: EnumStreamTypeFieldUpdateOperationsInput | $Enums.StreamType
     url?: StringFieldUpdateOperationsInput | string
     extractedId?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    smallImg?: StringFieldUpdateOperationsInput | string
+    bigImg?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     active?: BoolFieldUpdateOperationsInput | boolean
     upvotes?: UpvoteUpdateManyWithoutStreamNestedInput
     user?: UserUpdateOneRequiredWithoutStreamNestedInput
@@ -4738,6 +4840,10 @@ export namespace Prisma {
     type?: EnumStreamTypeFieldUpdateOperationsInput | $Enums.StreamType
     url?: StringFieldUpdateOperationsInput | string
     extractedId?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    smallImg?: StringFieldUpdateOperationsInput | string
+    bigImg?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     active?: BoolFieldUpdateOperationsInput | boolean
     userId?: StringFieldUpdateOperationsInput | string
     upvotes?: UpvoteUncheckedUpdateManyWithoutStreamNestedInput
@@ -4748,6 +4854,10 @@ export namespace Prisma {
     type: $Enums.StreamType
     url: string
     extractedId: string
+    title: string
+    smallImg: string
+    bigImg: string
+    createdAt?: Date | string
     active?: boolean
     userId: string
   }
@@ -4757,6 +4867,10 @@ export namespace Prisma {
     type?: EnumStreamTypeFieldUpdateOperationsInput | $Enums.StreamType
     url?: StringFieldUpdateOperationsInput | string
     extractedId?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    smallImg?: StringFieldUpdateOperationsInput | string
+    bigImg?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     active?: BoolFieldUpdateOperationsInput | boolean
   }
 
@@ -4765,6 +4879,10 @@ export namespace Prisma {
     type?: EnumStreamTypeFieldUpdateOperationsInput | $Enums.StreamType
     url?: StringFieldUpdateOperationsInput | string
     extractedId?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    smallImg?: StringFieldUpdateOperationsInput | string
+    bigImg?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     active?: BoolFieldUpdateOperationsInput | boolean
     userId?: StringFieldUpdateOperationsInput | string
   }
@@ -4904,6 +5022,17 @@ export namespace Prisma {
     not?: NestedEnumStreamTypeFilter<$PrismaModel> | $Enums.StreamType
   }
 
+  export type DateTimeFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
+  }
+
   export type BoolFilter<$PrismaModel = never> = {
     equals?: boolean | BooleanFieldRefInput<$PrismaModel>
     not?: NestedBoolFilter<$PrismaModel> | boolean
@@ -4919,6 +5048,10 @@ export namespace Prisma {
     type?: SortOrder
     url?: SortOrder
     extractedId?: SortOrder
+    title?: SortOrder
+    smallImg?: SortOrder
+    bigImg?: SortOrder
+    createdAt?: SortOrder
     active?: SortOrder
     userId?: SortOrder
   }
@@ -4928,6 +5061,10 @@ export namespace Prisma {
     type?: SortOrder
     url?: SortOrder
     extractedId?: SortOrder
+    title?: SortOrder
+    smallImg?: SortOrder
+    bigImg?: SortOrder
+    createdAt?: SortOrder
     active?: SortOrder
     userId?: SortOrder
   }
@@ -4937,6 +5074,10 @@ export namespace Prisma {
     type?: SortOrder
     url?: SortOrder
     extractedId?: SortOrder
+    title?: SortOrder
+    smallImg?: SortOrder
+    bigImg?: SortOrder
+    createdAt?: SortOrder
     active?: SortOrder
     userId?: SortOrder
   }
@@ -4949,6 +5090,20 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedEnumStreamTypeFilter<$PrismaModel>
     _max?: NestedEnumStreamTypeFilter<$PrismaModel>
+  }
+
+  export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedDateTimeFilter<$PrismaModel>
+    _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
   export type BoolWithAggregatesFilter<$PrismaModel = never> = {
@@ -5103,6 +5258,10 @@ export namespace Prisma {
     set?: $Enums.StreamType
   }
 
+  export type DateTimeFieldUpdateOperationsInput = {
+    set?: Date | string
+  }
+
   export type BoolFieldUpdateOperationsInput = {
     set?: boolean
   }
@@ -5237,6 +5396,17 @@ export namespace Prisma {
     not?: NestedEnumStreamTypeFilter<$PrismaModel> | $Enums.StreamType
   }
 
+  export type NestedDateTimeFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
+  }
+
   export type NestedBoolFilter<$PrismaModel = never> = {
     equals?: boolean | BooleanFieldRefInput<$PrismaModel>
     not?: NestedBoolFilter<$PrismaModel> | boolean
@@ -5252,6 +5422,20 @@ export namespace Prisma {
     _max?: NestedEnumStreamTypeFilter<$PrismaModel>
   }
 
+  export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedDateTimeFilter<$PrismaModel>
+    _max?: NestedDateTimeFilter<$PrismaModel>
+  }
+
   export type NestedBoolWithAggregatesFilter<$PrismaModel = never> = {
     equals?: boolean | BooleanFieldRefInput<$PrismaModel>
     not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
@@ -5265,6 +5449,10 @@ export namespace Prisma {
     type: $Enums.StreamType
     url: string
     extractedId: string
+    title: string
+    smallImg: string
+    bigImg: string
+    createdAt?: Date | string
     active?: boolean
     upvotes?: UpvoteCreateNestedManyWithoutStreamInput
   }
@@ -5274,6 +5462,10 @@ export namespace Prisma {
     type: $Enums.StreamType
     url: string
     extractedId: string
+    title: string
+    smallImg: string
+    bigImg: string
+    createdAt?: Date | string
     active?: boolean
     upvotes?: UpvoteUncheckedCreateNestedManyWithoutStreamInput
   }
@@ -5332,6 +5524,10 @@ export namespace Prisma {
     type?: EnumStreamTypeFilter<"Stream"> | $Enums.StreamType
     url?: StringFilter<"Stream"> | string
     extractedId?: StringFilter<"Stream"> | string
+    title?: StringFilter<"Stream"> | string
+    smallImg?: StringFilter<"Stream"> | string
+    bigImg?: StringFilter<"Stream"> | string
+    createdAt?: DateTimeFilter<"Stream"> | Date | string
     active?: BoolFilter<"Stream"> | boolean
     userId?: StringFilter<"Stream"> | string
   }
@@ -5465,6 +5661,10 @@ export namespace Prisma {
     type: $Enums.StreamType
     url: string
     extractedId: string
+    title: string
+    smallImg: string
+    bigImg: string
+    createdAt?: Date | string
     active?: boolean
     user: UserCreateNestedOneWithoutStreamInput
   }
@@ -5474,6 +5674,10 @@ export namespace Prisma {
     type: $Enums.StreamType
     url: string
     extractedId: string
+    title: string
+    smallImg: string
+    bigImg: string
+    createdAt?: Date | string
     active?: boolean
     userId: string
   }
@@ -5524,6 +5728,10 @@ export namespace Prisma {
     type?: EnumStreamTypeFieldUpdateOperationsInput | $Enums.StreamType
     url?: StringFieldUpdateOperationsInput | string
     extractedId?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    smallImg?: StringFieldUpdateOperationsInput | string
+    bigImg?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     active?: BoolFieldUpdateOperationsInput | boolean
     user?: UserUpdateOneRequiredWithoutStreamNestedInput
   }
@@ -5533,6 +5741,10 @@ export namespace Prisma {
     type?: EnumStreamTypeFieldUpdateOperationsInput | $Enums.StreamType
     url?: StringFieldUpdateOperationsInput | string
     extractedId?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    smallImg?: StringFieldUpdateOperationsInput | string
+    bigImg?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     active?: BoolFieldUpdateOperationsInput | boolean
     userId?: StringFieldUpdateOperationsInput | string
   }
@@ -5542,6 +5754,10 @@ export namespace Prisma {
     type: $Enums.StreamType
     url: string
     extractedId: string
+    title: string
+    smallImg: string
+    bigImg: string
+    createdAt?: Date | string
     active?: boolean
   }
 
@@ -5555,6 +5771,10 @@ export namespace Prisma {
     type?: EnumStreamTypeFieldUpdateOperationsInput | $Enums.StreamType
     url?: StringFieldUpdateOperationsInput | string
     extractedId?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    smallImg?: StringFieldUpdateOperationsInput | string
+    bigImg?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     active?: BoolFieldUpdateOperationsInput | boolean
     upvotes?: UpvoteUpdateManyWithoutStreamNestedInput
   }
@@ -5564,6 +5784,10 @@ export namespace Prisma {
     type?: EnumStreamTypeFieldUpdateOperationsInput | $Enums.StreamType
     url?: StringFieldUpdateOperationsInput | string
     extractedId?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    smallImg?: StringFieldUpdateOperationsInput | string
+    bigImg?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     active?: BoolFieldUpdateOperationsInput | boolean
     upvotes?: UpvoteUncheckedUpdateManyWithoutStreamNestedInput
   }
@@ -5573,6 +5797,10 @@ export namespace Prisma {
     type?: EnumStreamTypeFieldUpdateOperationsInput | $Enums.StreamType
     url?: StringFieldUpdateOperationsInput | string
     extractedId?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    smallImg?: StringFieldUpdateOperationsInput | string
+    bigImg?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     active?: BoolFieldUpdateOperationsInput | boolean
   }
 
